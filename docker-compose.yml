@@ -1,0 +1,25 @@
+version: '3'
+services:
+  catalog-service:
+    image: swamy342/catalog-service
+    ports: 
+     - "8000:80"
+  redis:
+    image: redis:alpine
+
+  Review-Module:
+    image: swamy342/review-service
+    ports:
+    - "8050:90"
+
+  Order-Module:
+    image: swamy342/order-service
+    ports:
+    - "8100:100"
+
+  Main-Page:
+    image: swamy342/main-page
+    build:
+    ports:
+    - "8200:80"
+    
